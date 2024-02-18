@@ -59,7 +59,7 @@ I have already preinstalled the correct java version. In other words, you don't 
 sudo apt install openjdk-11-jdk
 ```
 
-To verify that we have indeed the version `11.0.17`, run:
+To verify that we have indeed the version `11.0.21`, run:
 
 ```bash
 java --version

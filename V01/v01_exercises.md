@@ -26,7 +26,7 @@ Try to run some provided examples. An example program must be given as the first
 You will get the list of examples with
 
 ```bash
-~/hadoop/bin/hadoop jar ~/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-examples-3.3.4.jar
+~/hadoop/bin/hadoop jar ~/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-examples-3.3.6.jar
 ```
 
 Valid program names are:
@@ -61,7 +61,7 @@ Valid program names are:
 If a valid program name is provided as the first parameter, one sees the usage. E.g for Pi estimation with Monte Carlo:
 
 ```bash
-~/hadoop/bin/hadoop jar ~/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-examples-3.3.4.jar pi
+~/hadoop/bin/hadoop jar ~/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-examples-3.3.6.jar pi
 ```
 
 We see the desired usage:
@@ -75,7 +75,7 @@ Usage: org.apache.hadoop.examples.QuasiMonteCarlo <nMaps> <nSamples>
 Run the Pi estimator with `1` mapper and `1` sample.
 
 ```bash
-~/hadoop/bin/hadoop jar ~/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-examples-3.3.4.jar pi 1 1
+~/hadoop/bin/hadoop jar ~/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-examples-3.3.6.jar pi 1 1
 ```
 
 Play around with the `<nMaps>` and `<nSamples>` and get a feeling for accuracy vs runtime.
@@ -98,5 +98,5 @@ cat puzzle.dat
 ```
 
 ```bash
-~/hadoop/bin/hadoop jar ~/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-examples-3.3.4.jar sudoku ~/puzzle.dat
+~/hadoop/bin/hadoop jar ~/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-examples-3.3.6.jar sudoku ~/puzzle.dat
 ```
