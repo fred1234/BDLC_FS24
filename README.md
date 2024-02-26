@@ -23,7 +23,6 @@ This repository is used to provide additional resources for `BDLC_FS24`.
 └── v01_exercises.md    # exercises for this session
 ```
 
-<!--
 ## [V02](./V02/)
 
 - HDFS, YARN and MapReduce.
@@ -40,6 +39,7 @@ This repository is used to provide additional resources for `BDLC_FS24`.
 └── v02_exercises.md                        # exercises for this week
 ```
 
+<!--
 ## [V03](./V03/)
 
 - Setup and Customize `JupyterLab`.
