@@ -56,7 +56,7 @@ Also as `hadoop` add the following two `<poperty>`-tags to `~/hadoop/etc/hadoop/
 ### Additional Information About Resource Management
 
 - [blog post](https://blog.damavis.com/en/first-steps-with-apache-yarn-customization/)
-- [yarn defaults](https://hadoop.apache.org/docs/r3.3.4/hadoop-yarn/hadoop-yarn-common/yarn-default.xml)
+- [yarn defaults](https://hadoop.apache.org/docs/r3.3.6/hadoop-yarn/hadoop-yarn-common/yarn-default.xml)
 
 ## Start the Hadoop Services
 
