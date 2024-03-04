@@ -39,7 +39,6 @@ This repository is used to provide additional resources for `BDLC_FS24`.
 └── v02_exercises.md                        # exercises for this week
 ```
 
-<!--
 ## [V03](./V03/)
 
 - Setup and Customize `JupyterLab`.
@@ -59,6 +58,7 @@ This repository is used to provide additional resources for `BDLC_FS24`.
 └── v03_exercises.md                    # exercises for this week
 ```
 
+<!--
 ## [V04](./V04/)
 
 - Installation of MySQL
