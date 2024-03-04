@@ -56,7 +56,7 @@ Also as `hadoop` add the following two `<poperty>`-tags to `~/hadoop/etc/hadoop/
 ### Additional Information About Resource Management
 
 - [blog post](https://blog.damavis.com/en/first-steps-with-apache-yarn-customization/)
-- [yarn defaults](https://hadoop.apache.org/docs/r3.3.6/hadoop-yarn/hadoop-yarn-common/yarn-default.xml)
+- [yarn defaults](https://hadoop.apache.org/docs/r3.3.8/hadoop-yarn/hadoop-yarn-common/yarn-default.xml)
 
 ## Start the Hadoop Services
 
@@ -69,5 +69,5 @@ Go to the [Resource Manager](http://bdlc-XX.labservices.ch:8088/) and see the ne
 
 ```text
 Total Resources
-<memory:18.81 GB, vCores:20>
+	<memory:25.11 GB, vCores:16>
 ```
