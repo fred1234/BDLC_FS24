@@ -9,6 +9,7 @@ For `JupyterLab` support:
 ```bash
 sudo apt install -y libmysqlclient-dev
 sudo apt install -y libsasl2-dev
+sudo apt install -y pkg-config
 ```
 
 The user root has no password:
