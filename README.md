@@ -71,7 +71,6 @@ This repository is used to provide additional resources for `BDLC_FS24`.
 └── install_MySQL.md                    # Installation guide for mySQL and Python Magic.
 ```
 
-<!--
 ## [V05](./V05/)
 
 - Hive
@@ -88,6 +87,7 @@ This repository is used to provide additional resources for `BDLC_FS24`.
 └── V05_exercises_material              # Exercises for this week
 ```
 
+<!--
 ## [V06](./V06/)
 
 - Pandas Workshop created by Stefanie Molin
