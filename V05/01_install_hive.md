@@ -343,7 +343,7 @@ pip install pyhive[hive]
 
 <!-- TODO - link to FORUM
 
-Afterwards you can test the Notebook in `BDLC_FS23/V04/resources/Testing_MYSQL.ipynb`. If you don't see it, you need to pull the newest files from `github` first `Git > Pull from Remote`.
+Afterwards you can test the Notebook in `BDLC_FS24/V04/resources/Testing_MYSQL.ipynb`. If you don't see it, you need to pull the newest files from `github` first `Git > Pull from Remote`.
 (Please also checkout the forum entry about making a [backup](https://elearning.hslu.ch/ilias/ilias.php?ref_id=5324442&cmdClass=ilobjforumgui&thr_pk=55627&page=0&cmd=viewThread&cmdNode=10f:qo&baseClass=ilrepositorygui)). -->
 
 ## Starting Hive

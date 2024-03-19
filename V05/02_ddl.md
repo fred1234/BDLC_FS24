@@ -38,7 +38,7 @@ SELECT * FROM test_table;
 
 ## HIVE SQL in `JupyterLab`
 
-It is more comfortable to work in `JupyterLab`. You can test the Notebook in `BDLC_FS23/V05/resources/Testing_Hive.ipynb`.
+It is more comfortable to work in `JupyterLab`. You can test the Notebook in `BDLC_FS24/V05/resources/Testing_Hive.ipynb`.
 
 ## References
 
