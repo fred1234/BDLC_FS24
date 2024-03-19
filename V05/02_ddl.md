@@ -16,7 +16,7 @@ SHOW DATABASES;
 CREATE DATABASE IF NOT EXISTS test_db;
 ```
 
-you should see the `test_db` folder in http://bdlc-XX.el.eee.intern:9870/explorer.html#/user/hive/warehouse/
+you should see the `test_db` folder in http://bdlc-XX.labservices.ch:9870/explorer.html#/user/hive/warehouse/
 
 ```sql
 USE test_db;
@@ -30,7 +30,7 @@ Let us insert some data:
 INSERT INTO test_table (id, value) VALUES (1,'ABC'), (2,'DEF');
 ```
 
-This triggers a MapReduce job. Check it out in YARN http://bdlc-XX.el.eee.intern:8088/cluster
+This triggers a MapReduce job. Check it out in YARN http://bdlc-XX.labservices.ch:8088/cluster
 
 ```sql
 SELECT * FROM test_table;

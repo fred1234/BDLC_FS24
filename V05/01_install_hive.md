@@ -364,7 +364,7 @@ Check out the logs in `/tmp/hadoop/hive.log`. We should not see any errors, exce
 
 :sparkles: - You have installed Hive - :sparkles:
 
-Check out http://bdlc-XX.el.eee.intern:10002/
+Check out http://bdlc-XX.labservices.ch:10002/
 
 To start a CLI session with `hive` type:
 
