@@ -87,7 +87,6 @@ This repository is used to provide additional resources for `BDLC_FS24`.
 └── V05_exercises_material              # Exercises for this week
 ```
 
-<!--
 ## [V06](./V06/)
 
 - Pandas Workshop created by Stefanie Molin
@@ -97,6 +96,7 @@ This repository is used to provide additional resources for `BDLC_FS24`.
 └── pandas_course.md                # Guide to run and install the workshop.
 ```
 
+<!--
 ## [V07](./V07/)
 
 - Adding MovieLens 25M dataset to Hive.
