@@ -96,7 +96,6 @@ This repository is used to provide additional resources for `BDLC_FS24`.
 └── pandas_course.md                # Guide to run and install the workshop.
 ```
 
-<!--
 ## [V07](./V07/)
 
 - Adding MovieLens 25M dataset to Hive.
@@ -113,6 +112,7 @@ This repository is used to provide additional resources for `BDLC_FS24`.
 ├── v06_exercises_material           # Exercises for this week
 ```
 
+<!--
 ## [V08](./V08/)
 
 - Intro to Spark.
