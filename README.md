@@ -112,7 +112,6 @@ This repository is used to provide additional resources for `BDLC_FS24`.
 ├── v06_exercises_material           # Exercises for this week
 ```
 
-<!--
 ## [V08](./V08/)
 
 - Intro to Spark.
@@ -131,6 +130,7 @@ This repository is used to provide additional resources for `BDLC_FS24`.
 ├── install_spark.md                         # How to install Spark.
 ```
 
+<!--
 ## [V09](./V09/)
 
 - Intro to Spark DataFrames (DF) and SQL
