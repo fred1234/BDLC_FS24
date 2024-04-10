@@ -228,7 +228,7 @@ When you perform these tasks.
 ### Pi with spark-submit
 
 ```bash
-spark-submit --deploy-mode client --class org.apache.spark.examples.SparkPi /home/hadoop/spark/examples/jars/spark-examples_2.12-3.3.2.jar 10
+spark-submit --deploy-mode client --class org.apache.spark.examples.SparkPi /home/hadoop/spark/examples/jars/spark-examples_2.12-3.5.1.jar 10
 ```
 
 ### Pyspark - Interactive Shell
