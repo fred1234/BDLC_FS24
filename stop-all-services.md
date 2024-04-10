@@ -3,7 +3,7 @@
 ```bash
 stop-all.sh
 mr-jobhistory-daemon.sh stop historyserver
-# stop-history-server.sh
+stop-history-server.sh
 ```
 
 Kill these services with `kill pid`
