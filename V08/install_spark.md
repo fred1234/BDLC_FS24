@@ -270,7 +270,7 @@ USE movielens_parquet;
 select avg(rating) from ratings where movieid = 1;
 ```
 
-Exit with `exit()`.
+Exit with `exit;`.
 
 ## References
 
