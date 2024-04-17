@@ -130,7 +130,6 @@ This repository is used to provide additional resources for `BDLC_FS24`.
 ├── install_spark.md                         # How to install Spark.
 ```
 
-<!--
 ## [V09](./V09/)
 
 - Intro to Spark DataFrames (DF) and SQL
@@ -145,6 +144,7 @@ This repository is used to provide additional resources for `BDLC_FS24`.
 ├── 04_unix.stackexchange.com.ipynb         # DFs and the unix.stackexchange.com dataset (incl. some questions at the end)
 ```
 
+<!--
 ## [V10](./V10/)
 
 Fokus: Projektarbeit
