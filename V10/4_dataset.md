@@ -25,7 +25,7 @@ Create a folder `/data/dataset_cluster/taxi` and add the bash script to a file c
 
 #https://www1.nyc.gov/site/tlc/about/tlc-trip-record-data.page
 
-for year in {2009..2021}; do
+for year in {2015..2021}; do
     echo Year - $year
     mkdir ./$year
     hdfs dfs -mkdir /taxi/raw/$year

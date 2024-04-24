@@ -2,9 +2,9 @@
 
 | Machine                | Short Description |
 |------------------------|-------------------|
-| bdlc-19.labservices.ch | Master            |
-| bdlc-20.labservices.ch | Slave 1           |
-| bdlc-23.labservices.ch | Slave 2           |
+| bdlc-15.labservices.ch | Master            |
+| bdlc-16.labservices.ch | Slave 1           |
+| bdlc-17.labservices.ch | Slave 2           |
 
 Follow these steps as user `cluster` on your `master` node.
 
@@ -21,17 +21,17 @@ chmod 0600 ~/.ssh/authorized_keys
 Copy the key to all machines:
 
 ```bash
-ssh-copy-id cluster@bdlc-19.labservices.ch
-ssh-copy-id cluster@bdlc-20.labservices.ch
-ssh-copy-id cluster@bdlc-23.labservices.ch
+ssh-copy-id cluster@bdlc-15.labservices.ch
+ssh-copy-id cluster@bdlc-16.labservices.ch
+ssh-copy-id cluster@bdlc-17.labservices.ch
 ```
 
 You can now `ssh` from master into all machines. Verify this with:
 
 ```bash
-ssh bdlc-19.labservices.ch
-ssh bdlc-20.labservices.ch
-ssh bdlc-23.labservices.ch
+ssh bdlc-15.labservices.ch
+ssh bdlc-16.labservices.ch
+ssh bdlc-17.labservices.ch
 ```
 
 ## bashrc
@@ -62,8 +62,8 @@ source ~/.bashrc
 Copy the ~./bashrc to all other nodes.
 
 ```bash
-scp /home/cluster/.bashrc bdlc-20.labservices.ch:/home/cluster/.bashrc
-scp /home/cluster/.bashrc bdlc-23.labservices.ch:/home/cluster/.bashrc
+scp /home/cluster/.bashrc bdlc-16.labservices.ch:/home/cluster/.bashrc
+scp /home/cluster/.bashrc bdlc-17.labservices.ch:/home/cluster/.bashrc
 ```
 
 ## Setup Github Repo (optional)
@@ -157,7 +157,7 @@ Replace / add the configuration part in `~/hadoop/etc/hadoop/core-site.xml` with
 <configuration>
     <property>
         <name>fs.defaultFS</name>
-        <value>hdfs://bdlc-19.labservices.ch:9000</value>
+        <value>hdfs://bdlc-15.labservices.ch:9000</value>
     </property>
 </configuration>
 ```
@@ -166,7 +166,7 @@ Replace / add the configuration part in `~/hadoop/etc/hadoop/core-site.xml` with
 nano ~/hadoop/etc/hadoop/core-site.xml
 ```
 
-Use your master instead of `bdlc-19.el.eee`.
+Use your master instead of `bdlc-15.labservices.ch`.
 
 ### `hdfs-site.xml`
 
@@ -180,7 +180,7 @@ for `~/hadoop/etc/hadoop/hdfs-site.xml` with:
     </property>
     <property>
         <name>dfs.secondary.http.address</name>
-        <value>bdlc-20.labservices.ch:50090</value>
+        <value>bdlc-16.labservices.ch:50090</value>
     </property>
     <property>
         <name>dfs.name.dir</name>
@@ -189,6 +189,10 @@ for `~/hadoop/etc/hadoop/hdfs-site.xml` with:
     <property>
         <name>dfs.data.dir</name>
         <value>file:///data/hdfscluster/datanode</value>
+    </property>
+    <property>
+        <name>dfs.namenode.datanode.registration.ip-hostname-check</name>
+	    <value>false</value>
     </property>
 </configuration>
 ```
@@ -208,9 +212,9 @@ nano  ~/hadoop/etc/hadoop/workers
 E.g.
 
 ```text
-bdlc-19.labservices.ch
-bdlc-20.labservices.ch
-bdlc-23.labservices.ch
+bdlc-15.labservices.ch
+bdlc-16.labservices.ch
+bdlc-17.labservices.ch
 ```
 
 ### Copy the Changes to the Slaves
@@ -218,8 +222,8 @@ bdlc-23.labservices.ch
 Copy all the config changes to the slaves:
 
 ```bash
-scp /home/cluster/hadoop/etc/hadoop/* bdlc-20.labservices.ch:/home/cluster/hadoop/etc/hadoop/
-scp /home/cluster/hadoop/etc/hadoop/* bdlc-23.labservices.ch:/home/cluster/hadoop/etc/hadoop/
+scp /home/cluster/hadoop/etc/hadoop/* bdlc-16.labservices.ch:/home/cluster/hadoop/etc/hadoop/
+scp /home/cluster/hadoop/etc/hadoop/* bdlc-17.labservices.ch:/home/cluster/hadoop/etc/hadoop/
 ```
 
 ### Formatting HDFS
@@ -236,7 +240,7 @@ hdfs namenode -format
 start-dfs.sh
 ```
 
-Go to http://bdlc-19.labservices.ch:9870/ and verify that we have all nodes in the cluster.
+Go to http://bdlc-15.labservices.ch:9870/ and verify that we have all nodes in the cluster.
 
 Check that the command
 
@@ -270,12 +274,12 @@ cp ~/spark/conf/spark-defaults.conf.template ~/spark/conf/spark-defaults.conf
 Let's add the following block to the **end** of `spark-defaults.conf`:
 
 ```text
-spark.master spark://bdlc-19.labservices.ch:7077
+spark.master spark://bdlc-15.labservices.ch:7077
 
 spark.eventLog.enabled true
-spark.eventLog.dir hdfs://bdlc-19.labservices.ch:9000/user/spark/spark-logs
+spark.eventLog.dir hdfs://bdlc-15.labservices.ch:9000/user/spark/spark-logs
 spark.history.provider org.apache.spark.deploy.history.FsHistoryProvider
-spark.history.fs.logDirectory hdfs://bdlc-19.labservices.ch:9000/user/spark/spark-logs
+spark.history.fs.logDirectory hdfs://bdlc-15.labservices.ch:9000/user/spark/spark-logs
 spark.history.fs.update.interval 10s
 spark.history.ui.port 18080
 
@@ -283,9 +287,9 @@ spark.submit.deployMode client
 
 spark.driver.memory 10g
 
-spark.executor.memory 11g
+spark.executor.memory 15g
 spark.executor.instances 11
-spark.executor.cores 5
+spark.executor.cores 4
 ```
 
 ```bash
@@ -302,6 +306,8 @@ and add the following content to the **end** of `spark-env.sh`:
 
 ```bash
 HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop
+SPARK_LOCAL_DIRS=/data/tmpcluster
+SPARK_MASTER_HOST=bdlc-15.labservices.ch
 ```
 
 ```bash
@@ -317,9 +323,9 @@ cp ~/spark/conf/workers.template ~/spark/conf/workers
 and add the following content to the `workers` file:
 
 ```text
-bdlc-19.labservices.ch
-bdlc-20.labservices.ch
-bdlc-23.labservices.ch
+bdlc-15.labservices.ch
+bdlc-16.labservices.ch
+bdlc-17.labservices.ch
 ```
 
 ```bash
@@ -331,8 +337,8 @@ nano ~/spark/conf/workers
 Copy all the config changes to the slaves:
 
 ```bash
-scp /home/cluster/spark/conf/* bdlc-20.labservices.ch:/home/cluster/spark/conf/
-scp /home/cluster/spark/conf/* bdlc-23.labservices.ch:/home/cluster/spark/conf/
+scp /home/cluster/spark/conf/* bdlc-16.labservices.ch:/home/cluster/spark/conf/
+scp /home/cluster/spark/conf/* bdlc-17.labservices.ch:/home/cluster/spark/conf/
 ```
 
 ### Less Memory and CPU for Worker on Master
@@ -345,8 +351,10 @@ As the driver and other services (like Jupyter) will run on the master node as w
 
 ```bash
 HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop
-SPARK_WORKER_CORES=15
-SPARK_WORKER_MEMORY=33g
+SPARK_LOCAL_DIRS=/data/tmpcluster
+SPARK_MASTER_HOST=bdlc-15.labservices.ch
+SPARK_WORKER_CORES=12
+SPARK_WORKER_MEMORY=45g
 ```
 
 ```bash
@@ -367,17 +375,17 @@ start-history-server.sh
 
 ### Checks
 
-Go to http://bdlc-19.labservices.ch:8080/ and verify that we have the assigned resources.
+Go to http://bdlc-15.labservices.ch:8080/ and verify that we have the assigned resources.
 
 Check that the command
 
 ```bash
-spark-submit --deploy-mode client --class org.apache.spark.examples.SparkPi /home/cluster/spark/examples/jars/spark-examples_2.12-3.3.2.jar 10
+spark-submit --deploy-mode client --class org.apache.spark.examples.SparkPi /home/cluster/spark/examples/jars/spark-examples_2.12-3.5.1.jar 10
 ```
 
 Does not return a failure.
 
-Check also that the history server is running on http://bdlc-19.labservices.ch:18080/.
+Check also that the history server is running on http://bdlc-15.labservices.ch:18080/.
 
 ### Python venv and Packages
 
@@ -423,48 +431,54 @@ pip install freeze.txt
 ### JupyterLab
 
 ```bash
-jupyter notebook --generate-config
-jupyter notebook password
+jupyter-lab --generate-config
+```
+
+If this command does not work, sign out of your session (type `exit` until you are back on your local machine). Sign in again and the above command should work.
+
+```bash
+jupyter-lab password
 ```
 
 Copy the hashed password starting from `argon` to the end.
 
 ```bash
-cat /home/cluster/.jupyter/jupyter_notebook_config.json
+cat /home/hadoop/.jupyter/jupyter_server_config.json
 ```
 
 ## Configs
 
 ```bash
-nano /home/cluster/.jupyter/jupyter_notebook_config.py
+nano /home/hadoop/.jupyter/jupyter_lab_config.py
 ```
 
-Change the password settings from `# c.NotebookApp.password = ''` to your personal password:
+Change the password settings from `# c.ServerApp.password = ''` to your personal password:
 
 ```text
-c.NotebookApp.password = 'argon2:$argon2id$v=19$m=10240,t=10,p=...YOUR_HASH...'
+c.ServerApp.password = 'argon2:$argon2id$v=19$m=10240,t=10,p=...YOUR_HASH...'
 ```
 
 `JupyterLab` can't be accessed remotely by default. Let's change that by
-setting the listen ip from `# c.NotebookApp.ip = 'localhost'` to:
+setting the listen ip from `# c.ServerApp.ip = 'localhost'` to:
 
 ```python
-c.NotebookApp.ip = '*'
+c.ServerApp.ip = '*'
 ```
 
-and the default port `# c.NotebookApp.port = 8888` to:
+and the default port `# c.ServerApp.port = 0` to:
 
 ```python
-c.NotebookApp.port = 8888
+c.ServerApp.port = 8888
 ```
 
-start the service with:
+Start the service with:
 
 ```bash
 jupyter lab
 ```
 
 And test the service in your web-browser with the url `http://bdlc-XX.labservices.ch:8888/lab`
+
 
 close the running service (`ctrl-c twice`) and start jupyter as a service
 
@@ -478,7 +492,7 @@ The service should still be accessible via `http://bdlc-XX.labservices.ch:8888/l
 
 | Service              | Port  | Example                                |
 |----------------------|-------|----------------------------------------|
-| HDFS Hadoop Overview | 9870  | http://bdlc-19.labservices.ch:9870/    |
-| JupyterLab           | 8888  | http://bdlc-19.labservices.ch:8888/lab |
-| Spark Cluster Master | 8080  | http://bdlc-19.labservices.ch:8080/    |
-| Spark History Server | 18080 | http://bdlc-19.labservices.ch:18080/   |
+| HDFS Hadoop Overview | 9870  | http://bdlc-15.labservices.ch:9870/    |
+| JupyterLab           | 8888  | http://bdlc-15.labservices.ch:8888/lab |
+| Spark Cluster Master | 8080  | http://bdlc-15.labservices.ch:8080/    |
+| Spark History Server | 18080 | http://bdlc-15.labservices.ch:18080/   |
