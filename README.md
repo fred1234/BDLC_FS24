@@ -144,7 +144,6 @@ This repository is used to provide additional resources for `BDLC_FS24`.
 ├── 04_unix.stackexchange.com.ipynb         # DFs and the unix.stackexchange.com dataset (incl. some questions at the end)
 ```
 
-<!--
 ## [V10](./V10/)
 
 Fokus: Projektarbeit
@@ -161,7 +160,7 @@ Fokus: Projektarbeit
 ├── 4_dataset.md                                # Creating a Cluster: dataset download and pushing to HDFS
 ```
 
-## [V15](./V15/)
+<!-- ## [V15](./V15/)
 
 Fokus: Projektarbeit
 
@@ -169,4 +168,4 @@ Fokus: Projektarbeit
 .
 ├── 1_back_to_single_cluster.md               # Going back to single cluster mode
 ├── 2_feedback.md                             # General feedback for the project
-``` -->
+```  -->
