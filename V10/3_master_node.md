@@ -1,7 +1,7 @@
 # Master Setup
 
 | Machine                | Short Description |
-|------------------------|-------------------|
+| ---------------------- | ----------------- |
 | bdlc-15.labservices.ch | Master            |
 | bdlc-16.labservices.ch | Slave 1           |
 | bdlc-17.labservices.ch | Slave 2           |
@@ -443,13 +443,13 @@ jupyter-lab password
 Copy the hashed password starting from `argon` to the end.
 
 ```bash
-cat /home/hadoop/.jupyter/jupyter_server_config.json
+cat /home/cluster/.jupyter/jupyter_server_config.json
 ```
 
 ## Configs
 
 ```bash
-nano /home/hadoop/.jupyter/jupyter_lab_config.py
+nano /home/cluster/.jupyter/jupyter_lab_config.py
 ```
 
 Change the password settings from `# c.ServerApp.password = ''` to your personal password:
@@ -479,7 +479,6 @@ jupyter lab
 
 And test the service in your web-browser with the url `http://bdlc-XX.labservices.ch:8888/lab`
 
-
 close the running service (`ctrl-c twice`) and start jupyter as a service
 
 ```bash
@@ -491,7 +490,7 @@ The service should still be accessible via `http://bdlc-XX.labservices.ch:8888/l
 # Services Overview
 
 | Service              | Port  | Example                                |
-|----------------------|-------|----------------------------------------|
+| -------------------- | ----- | -------------------------------------- |
 | HDFS Hadoop Overview | 9870  | http://bdlc-15.labservices.ch:9870/    |
 | JupyterLab           | 8888  | http://bdlc-15.labservices.ch:8888/lab |
 | Spark Cluster Master | 8080  | http://bdlc-15.labservices.ch:8080/    |
