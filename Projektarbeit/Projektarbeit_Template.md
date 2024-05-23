@@ -3,7 +3,7 @@
 ## Deadlines
 
 - Sie bilden 4er bis 5er Teams. Eine Person vom Team soll mir bis am 02.05.2023 melden, welche Personen im Team sind.
-- Upload des Projektes nach ILIAS bis: Mo 02.06.2023 23:59:59.999 (MESZ)
+- Upload des Projektes nach ILIAS bis: Mo 03.06.2023 23:59:59.999 (MESZ)
 
 ## Sprache
 
